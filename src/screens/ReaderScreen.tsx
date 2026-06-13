@@ -11,6 +11,7 @@ import type {
   PdfProgress,
   EpubProgress,
 } from '../types/progress';
+import PdfReader from '../components/reader/PdfReader';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Reader'>;
 
@@ -57,7 +58,6 @@ function ReaderScreen({ route }: Props): React.JSX.Element {
     [bookId],
   );
 
-  void handlePdfProgressChange;
   void handleEpubProgressChange;
   if (isLoading) {
     return (
@@ -86,15 +86,11 @@ function ReaderScreen({ route }: Props): React.JSX.Element {
       <View
         style={[styles.container, { backgroundColor: theme.readerBackground }]}
       >
-        <Text style={[styles.message, { color: theme.text }]}>
-          PDF Reader placeholde - {book.title}
-        </Text>
-        <Text style={[styles.message, { color: theme.textSecondary }]}>
-          Initial page:{pdfProgress?.currentPage ?? 1}
-        </Text>
-        <Text style={[styles.message, { color: theme.textSecondary }]}>
-          File: {book.filePath}
-        </Text>
+        <PdfReader
+          filePath={book.filePath}
+          initialPage={pdfProgress?.currentPage ?? 1}
+          onPageChange={handlePdfProgressChange}
+        />
       </View>
     );
   }

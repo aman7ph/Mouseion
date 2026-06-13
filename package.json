@@ -25,7 +25,7 @@
     "react-native-gesture-handler": "^3.0.0",
     "react-native-mmkv": "^4.3.1",
     "react-native-nitro-modules": "^0.35.9",
-    "react-native-pdf": "^7.0.4",
+    "react-native-pdf-light": "^3.2.1",
     "react-native-reanimated": "^4.4.1",
     "react-native-safe-area-context": "^5.8.0",
     "react-native-screens": "^4.25.2",
