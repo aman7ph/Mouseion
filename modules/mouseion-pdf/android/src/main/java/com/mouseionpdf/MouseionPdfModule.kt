@@ -97,4 +97,8 @@ class MouseionPdfModule(private val reactContext: ReactApplicationContext) :
             promise.reject("RENDER_ERROR", e.message ?: "Unknown error", e)
         }
     }
+
+    companion object {
+        const val NAME = "MouseionPdf"
+    }
 }
